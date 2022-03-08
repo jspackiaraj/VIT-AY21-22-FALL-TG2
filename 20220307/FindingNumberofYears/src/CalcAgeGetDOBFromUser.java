@@ -5,13 +5,13 @@ import java.util.*;
 public class CalcAgeGetDOBFromUser {
     public static void main(String[] args){
         // The birthday is a constant
-        LocalDate LDBirthday_local = LocalDate.of(2004,5,25);
+        // LocalDate LDBirthday_local = LocalDate.of(2004,5,25);
         // Date Time is constant
         // AIM: To get the current date and calculate Age.
         // LocalDate LDToday_local = LocalDate.of(2022,3,7);
         // Step 1: Get the system time
         //
-        Date currDate = new Date();
+        //
         DateTimeFormatter dtfDateFormat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         LocalDateTime ldtCurrentDate =  LocalDateTime.now();
         System.out.println("Today's Date is : " + dtfDateFormat.format(ldtCurrentDate));
@@ -22,11 +22,13 @@ public class CalcAgeGetDOBFromUser {
         // Get the Date of birth from user
         Scanner inputObject = new Scanner(System.in);
         String strBirthdayInputByUser;
-        DateTimeFormatter dtfBirthdayFormat = DateTimeFormatter.ofPattern("dd-MM-yyy");
-        System.out.print("Enter the birthday in the format \"dd-MM-yyy\"");
+        DateTimeFormatter dtfBirthdayFormat = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        System.out.println("Enter the birthday in the format \"dd-MM-yyyy\"  ");
+        System.out.print("If your birthday is 19 Aug 2002, enter the same as 19-08:-2001 : ");
         strBirthdayInputByUser = inputObject.next();
         System.out.printf("The entered birthday is %s \n", strBirthdayInputByUser);
 
+        LocalDate LDBirthday_local = LocalDate.parse(strBirthdayInputByUser, dtfBirthdayFormat);
         long lngTime = ChronoUnit.MONTHS.between(LDToday_local, LDBirthday_local);
 
         Period perTimeBetween  = Period.between(LDBirthday_local,LDToday_local);
