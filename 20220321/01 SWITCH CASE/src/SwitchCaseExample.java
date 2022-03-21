@@ -14,8 +14,8 @@ public class SwitchCaseExample {
         Scanner inputObject = new Scanner(System.in);
         do{
             System.out.print("Please enter your choice: (0 - 3) ");
-            strInputKeyStored = inputObject.next();
-            //System.out.println(strInputKeyStored.charAt(0));
+            // strInputKeyStored = inputObject.next();
+            System.out.println(strInputKeyStored.charAt(0));
             switch(strInputKeyStored.charAt(0)){
                 case '0':
                     boolIsProgramRunning = false;
