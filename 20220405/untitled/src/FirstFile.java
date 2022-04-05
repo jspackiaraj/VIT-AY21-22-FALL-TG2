@@ -6,7 +6,14 @@ public class FirstFile {
         // (Change the directory as per your machine's directory structure
         try{
             File fsFileObject = new File("C:\\JAVA_Files\\JAVAFilesDemo\\TG2_NewFile.txt");
-            if(fsFileObject.)
+            if(fsFileObject.exists()) {
+                System.out.println("File Exists ..");
+            } else {
+                System.out.println("File does not exist ..");
+                fsFileObject.createNewFile();
+            }
+        } catch (Exception e){
+            System.out.println(e);
         }
     }
 }
