@@ -23,7 +23,7 @@ public class Joinery {
     public double getHeight() {
         return height;
     }
-
+//areaOfJoinery
     public String getJoineryMaterial() {
         return joineryMaterial;
     }

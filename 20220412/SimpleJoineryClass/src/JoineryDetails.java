@@ -13,6 +13,11 @@ public class JoineryDetails {
         widthOfElement = inputObject.nextDouble();
         System.out.print("Enter the Height of the Element (in m) : ");
         heightOfElement = inputObject.nextDouble();
+        // NOTE THE LINE BELOW
+        // There will be an additional \n character which is ignored by nextDouble.
+        // When you have a nextDouble followed by another method, please have an empty
+        // nextLine()
+        inputObject.nextLine();
         System.out.print("Enter the type of the Element (DOOR / WINDOW) : ");
         typeOfElement = inputObject.nextLine();
         System.out.print("Enter the material of the Element : ");
